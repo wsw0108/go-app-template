@@ -26,14 +26,14 @@ archives:
       windows: Windows
       386: i386
       amd64: x86_64
-    name_template: "{{ .ProjectName }}_{{ .Tag }}_{{ .Os }}_{{ .Arch }}"
     format_overrides:
       - goos: windows
         format: zip
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     files:
        - README.md
        - LICENSE
 checksum:
-  name_template: "{{ .ProjectName }}_{{ .Tag }}_checksums.txt"
+  name_template: "{{ .ProjectName }}_{{ .Version }}_checksums.txt"
 snapshot:
   name_template: "{{ .Tag }}-{{ .ShortCommit }}"
